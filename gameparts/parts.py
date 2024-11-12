@@ -1,4 +1,9 @@
 class TicTacToe:
+    """
+    Класс, который описывает игровое поле для игры
+    крестики нолики.
+    """
+    _field_size = 3
     _CROSS = 'X'
     _ZERO = 'O'
 
@@ -12,3 +17,9 @@ class TicTacToe:
         for row in self.board:
             print('|'.join(row))
             print('-' * 5)
+
+    def __str__(self):
+        return (
+            'Размер игрового поля -  '
+            f'{self.field_size}x{self.field_size}'
+        )
