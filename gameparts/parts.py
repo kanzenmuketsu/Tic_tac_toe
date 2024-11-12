@@ -23,3 +23,15 @@ class TicTacToe:
             'Размер игрового поля -  '
             f'{self.field_size}x{self.field_size}'
         )
+
+    def is_board_full(self) -> bool:
+        for row in self.board:
+            for place in row:
+                if place == " ":
+                    return False
+        else:
+            return True
+
+    def check_win(self):
+        for row in self.board:
+            pass

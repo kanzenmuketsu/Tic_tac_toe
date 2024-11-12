@@ -6,3 +6,12 @@ class InvalidFieldError(IndexError):
 
     def __str__(self):
         return 'Вы выбрали несуществующую ячейку игрового поля'
+
+class NotEmptyFieldError(ValueError):
+    """
+    Ошибка возникает при попытке записать значение в занятую
+    ячейку игрового поля.
+    """
+
+    def __str__(self):
+        return 'Вы пытались изменить занятую ячейку'
