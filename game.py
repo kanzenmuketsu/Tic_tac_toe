@@ -1,4 +1,6 @@
-from operator import truediv
+from tabnanny import check
+
+from gameparts import TicTacToe
 
 from gameparts import TicTacToe
 from gameparts.exceptions import InvalidFieldError, NotEmptyFieldError
@@ -42,11 +44,17 @@ def main():
         tic.make_move(row, column, current_player)
         tic.display()
 
-        current_player = 'O' if current_player == 'X' else 'X'
+
+
+        if tic.check_win():
+            print(f'Победу одержал {current_player}-ик.')
+            running = False
 
         if tic.is_board_full():
             print('Ничья')
-            break
+            running = False
+
+        current_player = 'O' if current_player == 'X' else 'X'
 
 
 

@@ -33,6 +33,16 @@ class TicTacToe:
             return True
 
     def check_win(self):
-        for row in self.board:
-            if row[0] == row[1] == row[2]:
+        for i in range(self._field_size):
+            if self.board[i][0] != ' ' and self.board[i][0] == self.board[i][1] == self.board[i][2]:
+                return  True
+
+        for j in range(self._field_size):
+            if self.board[0][j] != ' ' and self.board[0][j] == self.board[1][j] == self.board[2][j] :
+                return  True
+
+        if self.board[1][1] != ' ' and self.board[1][1] == self.board[0][0] == self.board[2][2] or \
+            self.board[2][0] != ' ' and self.board[2][0] == self.board[1][1] == self.board[0][2]:
                 return True
+
+        return False
